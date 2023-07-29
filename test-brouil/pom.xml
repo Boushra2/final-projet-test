@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test-brouil</groupId>
+  <artifactId>test-brouil</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <!-- Ajoutez ici les dépendances pour Cucumber et Selenium -->
+ <dependencies>
+    <!-- Dépendance pour Cucumber -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.11.1</version> <!-- Utilisez la dernière version disponible -->
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.11.0</version> <!-- Utilisez la dernière version disponible -->
+    </dependency>
+    <!-- Dépendance pour Selenium -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.8.3</version>
+    </dependency>
+    <!-- Dépendance pour TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.7.0</version>
+        <scope>test</scope>
+    </dependency>
+    
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>7.11.1</version> <!-- Utilisez la dernière version disponible -->
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+     <dependency>
+       <groupId>io.github.bonigarcia</groupId>
+       <artifactId>webdrivermanager</artifactId>
+       <version>5.3.2</version>
+    </dependency>
+
+
+
+     <dependency>
+       <groupId>net.masterthought</groupId>
+       <artifactId>cucumber-reporting</artifactId>
+       <version>5.7.5</version>
+    </dependency>
+  
+    <!-- Autres dépendances ici -->
+    
+    <!-- Dépendance pour SLF4J -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.32</version> <!-- Utilisez la dernière version disponible -->
+    </dependency>
+
+
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.6.0</version>
+            <executions>
+                <execution>
+                    <id>execution</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>My Cucumber Tests</projectName>
+                        <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
+                        <jsonFiles>
+                            <param>${project.build.directory}/cucumber.json</param>
+                        </jsonFiles>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+
+
+
+
+
+
+
+
+
+ <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+</project>
