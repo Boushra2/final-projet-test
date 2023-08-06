@@ -13,15 +13,15 @@ public class Configuration {
         this.driver = driver;
     }
 
-    public void goToAmazon() {
+    public void goToWebsite() {
         // Utilisation de WebDriverManager pour configurer automatiquement le pilote Chrome
         WebDriverManager.chromedriver().setup();
 
         // Configuration du navigateur pour qu'il soit visible
         driver = new ChromeDriver();
 
-        // Accéder au site Amazon
-        driver.get("https://www.amazon.fr/");
+        // Accéder au site 
+        driver.get("https://shop-in.ovh/");
     }
 }
 
